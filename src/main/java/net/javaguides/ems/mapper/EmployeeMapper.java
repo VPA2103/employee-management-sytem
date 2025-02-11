@@ -20,9 +20,9 @@ public class EmployeeMapper {
     }
 
     public static Employee mapToEmployee(EmployeeDto employeeDto) {
-
+        Long id = employeeDto.getId() != null ? employeeDto.getId() : 0L;
         return new Employee(
-          employeeDto.getId(),
+          id,
           employeeDto.getFirstName(),
           employeeDto.getLastName(),
           employeeDto.getEmail()
